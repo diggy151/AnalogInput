@@ -13,7 +13,6 @@ norm_v = 28464 / 65535
 rng = 0.6 - 0.05
 minm = 0.05
 maxm = 65535
-delay = (pot.value / maxm * rng + minm)
 
         
 
