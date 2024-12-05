@@ -1,0 +1,21 @@
+
+import board
+import time
+from digitalio import DigitalInOut, Direction
+import random
+from analogio import AnalogIn
+import pwmio
+
+
+red = pwmio.PWMOut(board.D2, frequency=5000, duty_cycle=0)
+pot = AnalogIn(board.A1)
+norm_v = 28464 / 65535
+rng = 0.6 - 0.05
+minm = 0.05
+maxm = 65535
+delay = (pot.value / maxm * rng + minm)
+
+        
+
+while True:
+    red.duty_cycle = maxm - pot.value
